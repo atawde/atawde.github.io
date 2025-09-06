@@ -1,76 +1,147 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <!-- link rel="icon" type="image/x-icon" href="/favicon.ico" / -->
     <meta name="viewport" content="width=device-width" />
     <title>Portfolio</title>
-    <link rel="stylesheet" href="/output.css" />
+    <link rel="stylesheet" href="styles.css" />
 
+    <script>
+    /*
+    document.querySelectorAll(".nav-link").forEach(link => {
+        link.addEventListener("click", function(e) {
+            e.preventDefault(); // stop the page from jumping
+
+    // get which modal to open (from data attribute)
+            const modalId = this.getAttribute("data-modal");
+            const modal = document.getElementById(modalId);
+
+    // Hide all modals first
+            document.querySelectorAll(".modal").forEach(m => m.style.display = "none");
+
+    // Show the chosen one
+            if (modal) {
+                modal.style.display = "flex";
+            }
+        });
+    });
+    */
+    //    const openModalBtn = document.getElementById('openModal'); 
+    //    const closeModalBtn = document.getElementById('closeModal');
+
+    // Open modal when button is clicked
+    //    openModalBtn.addEventListener('click', () => {
+    //        modal.style.display = 'flex'; // Show the modal
+    //    });
+    
+        function closeModal(element) {                                // Close modal when close button is clicked
+            const modalId = element.getAttribute("data-modal");
+            const modal = document.getElementById(modalId);
+            modal.style.display = 'none'; // Hide the modal
+        }
+    
+       function showModal(element) {
+    //        const modal = document.getElementById('modal');
+    //        const modal_id = this.getAttribute("data-modal")
+            const modalId = element.getAttribute("data-modal");
+            const modal = document.getElementById(modalId);
+
+        //    const modal_name = document.getElementById(element)
+            modal.style.display = 'flex'; // Show the modal
+        }
+    
+    </script>
   </head>
 
-  <body class="bg-[#DDE5EB] font-(fammily-name:system-ui) text-center">
-
+  <body>
     <header>
-        <h1 class="text-2xl font-bold pt-10 pb-5">My Project Portfolio</h1>
+        <div>
+            <img src="./Ajit_pic3.png" width="100" height="100" alt="Ajits pic">
+        </div>
+        <div class="logos">
+            <a href="https://www.linkedin.com/in/ajittawde/" style="display: block">
+                <image src="linkedin.png" width="25" height="25" alt="linkedin"></image>
+            </a>
+            <a href="https://github.com/atawde" style="display: block">
+                <image src="github.png" width="25" height="25" alt="github"></image>
+            </a>
+            <a href="mailto: ajit.tawde65@gmail.com" style="display: block">
+                <image src="gmail.png" width="25" height="25" alt="github"></image>
+            </a>
+        </div>
+        <div style="margin-left: 300px;">
+            <h1>My Project Portfolio</h1>
+        </div>
+            
     </header>
  
-    <div id="main_page" class="grid grid-cols-2 grid-rows-2 gap-1">
-        <div id="block1" class="border-2 border-gray-500 ml-4 min-h-[260px]">
-            <h2 class="font-bold">Game Zone</h2>
-            <ul>
-                <li><a href="/game1.html">Su Do Ku</a></li>
-                <li><a href="/game2.html">Tower of Babel</a></li>
-
-            </ul>            
-        </div>
-        
-        <div id="block2" class="border-2 border-gray-500 mr-4 min-h-[260px]">
-            <h2 class="font-bold">Tryst With AI/ML</h2>
-            <p>Here are some of my dabling in the world of AI and ML</p>
-            <ul>
-                <li><a href="./chatbots.html">Chatbots</a></li>
-                <li><a href="/project2.html">Project 2</a></li>
-            </ul>
-        </div>
-
-        <div class="relative ml-4">
-            <div class="absolute inset-0 bg-[url(./python-logo-only.png)] opacity-25 z-0"></div>
-            <div id="block3" class="border-2 border-gray-500 min-h-[260px]">
-                <h2 class="font-bold">Taming the Python</h2>
-                <p>Some Python scripts</p>
-                <ul>
-                    <li><a href="/project1.html">Project 1</a></li>
-                    <li><a href="/project2.html">Project 2</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <div id="block4" class="border-2 border-gray-500 mr-4 min-h-[260px]">
-            <h2 class="font-bold">Miscllaneous</h2>
-            <p>Random Stuff That Spiked My Interest</p>
-            <ul>
-                <li><a href="/project1.html">Project 1</a></li>
-                <li><a href="/project2.html">Project 2</a></li>
-            </ul>
-        </div>
-
+    <div>
+        <hr style="height:2px;border-width:0;color:gray;background-color:gray"><br>
+        <ul>
+            <li >
+                <a href="#" class="nav-link" data-modal="kioku" onclick="showModal(this)">
+                    <h2>Kioku</h2>
+                    <p>(memory in Japanese) is a chatbot meant to help people with early onset of dementia.</p>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link" data-modal="tracker" onclick="showModal(this)">
+                    <h2>Tracker</h2>
+                    <p>Webscraper to extract current value of Nifty50, Sensex, Gold, Silver, USD/INR and 7 crypto tokens.</p>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link" data-modal="techpro" onclick="showModal(this)">
+                    <h2>TechPro</h2>
+                    <p>Agentic AI system to conduct technical interview</p>
+                </a>
+            </li>
+        </ul>
     </div>
 
-    <footer class="absolute bottom-0 w-full">
-        <hr>
-        <div class="content-center">
-            <nav>
-            <a href="/">Home</a>
-            <a href="/pricing.html">Linkedin</a>
-            <a href="/blog.html">Github</a>
-            </nav>
-        </div>
-        <p class="content-left">
-            &copy; 2025  All rights reserved.
+    <div class="modal" id="kioku" style="display: none">
+        <p style="text-align: left; margin-left: 15px; margin-right: 15px; margin-top: 25px; font-size: 1rem;"><strong>Kioku</strong> is an interactive chatbot using OpenAI's 'gpt-4o-audio-preview' model. 
+           It is based on audio-text-audio model to retain control on LLM input. Spoken prommpt from microphone is converted to text, 
+           using python package 'speech_recognizer' and fed to LLM. Text output from LLM is converted to audio using 'pyttsx3' and fed to speaker.<br><br>
+           Personal information about user is pre-fed into LLM as system prompt. It includes name, place of birth, names of siblings, spouse,
+           children, other relatives, places lived, workplaces etc.<br><br>
+           In next iteration, multimedia will be fed, like short audio or video clips, pictures. User will then be asked to identify people
+           in the videp/picture or speake in audio. <br><br>
+           Some analysis on user's recollection can be then made, like visual memory is strong or events from distant past are not recollected
+           etc. <br><br>
+           <strong>Github repo: </strong><a href="https://github.com/atawde/Kioku"><strong>Kioku</strong></a>
         </p>
-    </footer>
+        <button class="close-btn" data-modal="kioku" onclick="closeModal(this)">+</button>
+    </div>
+    
+    <div class="modal" id="tracker" style="display: none">
+        <p style="text-align: left; margin-left: 15px; margin-right: 15px; margin-top: 25px; font-size: 1.25rem;">
+           1. Scrape moneycontrol.com to get current value of Nifty50, Sensex, Gold, Silver and INT/USD.<br>
+           2. Scrape coinmarketcap.com to get current value of BTC, ETH, SOL, ADA, DOGE, EWT & SLR <br>
+           3. Dump the collected values into .csv file<br>
+           4. Log any errors/warnings into log file<br>
+           5. Run script daily using Windows Task Schedule<br><br>
+           <i>WIP</i><br>
+           1. If current price of any of the above is deviating more than 5% from 20 day moving average then send alert message to mobile using 'pushover'<br>
+           2. Use Linear Regression to predict next days value<br><br>
+           Using Python package 'BeautifulSoup' for webscraping.<br>
+           <strong>Github Repo: </strong><a href="https://github.com/atawde/Tracker"><strong>Tracker</strong></a>
+        </p>
+        <button class="close-btn" data-modal="tracker" onclick="closeModal(this)">+</button>
+    </div>
+    
+     <div class="modal" id="techpro" style="display: none">
+        <p style="text-align: left; margin-left: 15px; margin-right: 15px; margin-top: 25px; font-size: 1.25rem;">
+           <strong>Agentic AI</strong> program to conduct mock technical interview.<br><br>
+           Using 4 agents to ask questions on Python, Javascript, Data Structures & Algorithms and System Design. Handover agent switches between
+           these agents based on input from interviewee. <br>
+           At the end 'Analyzer' agent does analysis of the answers given and provides feedback.<br><br>
+           Model used is chatgpt.<br>
+           Using BaseModel to structure the response from model and 'rich' to format the text output on terminal.<br><br>
+           <strong>GitHub Repo:</strong><a href="https://github.com/atawde/techPro"><strong>techPro</strong></a></a>
+        </p>
+        <button class="close-btn" data-modal="techpro" onclick="closeModal(this)">+</button>
+    </div>
 
   </body>
 </html>
-
-
