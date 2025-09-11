@@ -37,7 +37,7 @@ ul,li{
 ul{
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: left;
 }
 
 ul li a{
