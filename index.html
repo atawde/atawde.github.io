@@ -75,6 +75,12 @@
                     <p>Create synthetic data tables maintaing referential integrity</p>
                 </a>
             </li>
+            <li>
+                <a href="#" class="nav-link" data-modal="suraksha" onclick="showModal(this)">
+                    <h2>Emergency Alert</h2>
+                    <p>Create QR Code for your personal data to get immediate help during emergency situation</p>
+                </a>
+            </li>
         </ul>
     </div>
 
@@ -128,9 +134,23 @@
            Using Python library Faker to generate synthetic data and Flask for UI. 
            Any Foreign Key -- > Primary Key relationship specified will be maintained within the generated data.<br><br>
            <img src="input_screen.png" width="500" height="200"><br>
-           <strong>GitHub Repo:</strong><a href="https://github.com/atawde/SyntheticData"><strong>techPro</strong></a></a>
+           <strong>GitHub Repo:</strong><a href="https://github.com/atawde/SyntheticData"><strong>techPro</strong></a>
         </p>
         <button class="close-btn" data-modal="synthdata" onclick="closeModal(this)">+</button>
     </div>
+
+    <div class="modal" id="suraksha" style="display: none">
+        <p style="text-align: left; margin-left: 15px; margin-right: 15px; margin-top: 25px; font-size: 1rem;">
+           <strong>QR Code Generator</strong> Full stack website built using Python/Flask/SQLite.<br><br>
+           Enter your personal data, like name, emergecy conact numbers, blood group, medical conditions. <br>
+           System will generate QR Code encoding this information. <br>
+           Paste this QR code on back of your mobile, vehicle windshield to get 
+           immediate medical help in case of road emergency.<br><br>
+           <strong>Demo link:</strong><a href="https://suraksha-2bst.onrender.com/"><strong>Suraksha</strong></a>
+           <strong>GitHub Repo:</strong><a href="https://github.com/atawde/suraksha"><strong>techPro</strong></a>
+        </p>
+        <button class="close-btn" data-modal="synthdata" onclick="closeModal(this)">+</button>
+    </div>
+
   </body>
 </html>
